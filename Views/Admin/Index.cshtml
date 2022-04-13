@@ -1,0 +1,107 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<div class="alert alert-@ViewBag.alerta"> - - <b>@ViewBag.res</b> - - </div>
+<form action="/Admin/Index" method="post">
+    <table>
+        <tr>
+            <td style="padding: 10px"> Nombre: </td>
+            <td style="padding: 10px"><input class="form-control" type="text" name="nom" id="nom" required /></td>
+
+        </tr>
+        <tr>
+            <td style="padding: 10px"> Cedula con guiones: </td>
+            <td style="padding: 10px"><input class="form-control" type="text" name="ced" id="ced" required /></td>
+
+        </tr>
+
+        <tr>
+            <td style="padding: 10px"> Direccion: </td>
+            <td style="padding: 10px"><input class="form-control" type="text" name="dir" id="dir" required /></td>
+
+        </tr>
+        <tr>
+            <td style="padding: 10px"> Telefono: </td>
+            <td style="padding: 10px"><input class="form-control" type="text" name="tel" id="tel" required /></td>
+
+        </tr>
+        <tr>
+            <td style="padding: 10px"> Tipo de Membresia: </td>
+            <td style="padding: 10px"><input class="form-control" type="text" name="tipo" id="tipo" required /></td>
+
+        </tr>
+        <tr>
+            <td style="padding: 10px"> Contacto de  Emergencia: </td>
+            <td style="padding: 10px"><input class="form-control" type="text" name="contactoname" id="contactoname" required /></td>
+
+        </tr>
+        <tr>
+            <td style="padding: 10px"> Telefono Contacto de Emergencia: </td>
+            <td style="padding: 10px"><input class="form-control" type="text" name="telcontacto" id="telcontacto" required /></td>
+
+        </tr>
+        <tr>
+            <td style="padding: 10px"> </td>
+            <td style="padding: 10px">
+                <button class="btn btn-success" type="submit" name="btn1" id="btn1">Agregar</button>
+
+            </td>
+        </tr>
+    </table>
+</form>
+
+<br />
+<br />
+<table id="table_pelis" class="table table-bordered">
+    <thead style="background-color: black; color: white">
+        <tr>
+            <th style="text-align: center">Nombre</th>
+            <th style="text-align: center">Cedula</th>
+            <th style="text-align: center">Direccion</th>
+            <th style="text-align: center">Telefono</th>
+            <th style="text-align: center">Tipo de Membresia</th>
+            <th style="text-align: center">Contacto de Emergencia</th>
+            <th style="text-align: center">Telefono Contacto Em. </th>
+            <th style="text-align: center">Membresia Emitida</th>
+            <th style="text-align: center">Pasar a Pagar antes de </th>
+            <th style="text-align: center">Funciones </th>
+
+
+
+        </tr>
+    </thead>
+    <tbody style="background-color:white">
+        @foreach (var f in Model)
+        {
+        <tr>
+
+            <td style="text-align: center">@f.NombreSocio</td>
+            <td style="text-align: center">@f.CedulaSocio</td>
+            <td style="text-align: center">@f.Direccion</td>
+            <td style="text-align: center">@f.Telefono</td>
+            <td style="text-align: center">@f.TipoMembresia</td>
+            <td style="text-align: center">@f.NombreContacto</td>
+            <td style="text-align: center">@f.TelefonoContacto</td>
+            <td style="text-align: center">@f.MembresiaEmitida</td>
+            <td style="text-align: center">@f.PagarAntesDe</td>
+
+            <td style="text-align: center">
+
+                <button class="btn btn-danger" type="button" id="btn_eli" name="btn_eli" onclick="location.href='../Admin/Eliminar?Id=@f.IdSocio'"><span class="glyphicon glyphicon-trash"></span></button>
+
+            </td>
+        </tr>
+        }
+
+    </tbody>
+</table>
+<style>
+
+
+    td {
+        font-weight: 300;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+</style>

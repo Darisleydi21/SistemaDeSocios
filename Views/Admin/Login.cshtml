@@ -1,0 +1,124 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+</head>
+
+
+<body>
+    <form action="index.html" class="form-box animated fadeInUp">
+        <h1 class="form-title">A D M I N</h1>
+        <input type="text" name="username" id="username" placeholder="Username" autofocus>
+        <input type="password" name="password" id="password" placeholder="Password">
+        <input type="button" class="btn btn-danger" value="Iniciar Sesion" id="submit" onclick="validate()" />
+
+    </form>
+</body>
+
+</html>
+<script>
+
+    function validate() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        if (username == "Admin" && password == "1234") {
+            window.location = "../Admin/Index";
+
+        }
+        else {
+            alert("Incorrect password");
+            return window.location = "../Admin/Login";
+
+        }
+
+    }
+</script>
+<style>
+
+    body, html {
+        height: 100%;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background-color: black;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        /* No Scrollbar */
+        overflow: hidden;
+    }
+
+    .form-box {
+        width: stretch;
+        height: stretch;
+        padding: 90px;
+        margin-left: 0px;
+        margin-right: 0px;
+        border-radius: 20px;
+        background: #191919;
+        text-align: center;
+    }
+
+    .form-title {
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+
+    .form-box input[type="text"], .form-box input[type="password"], .form-box button[type="submit"] {
+        border: 0;
+        background: none;
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        border: 2px solid #AD0E0E;
+        padding: 14px 10px;
+        width: 200px;
+        outline: none;
+        color: white;
+        border-radius: 24px;
+        transition: 0.25s;
+    }
+
+        .form-box input[type="text"]:focus, .form-box input[type="password"]:focus {
+            width: 280px;
+            border-color: #AD0E0E;
+        }
+
+    .form-box button[type="submit"] {
+        border: 0;
+        background: #AD0E0E;
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        border: 2px solid #AD0E0E;
+        padding: 14px 40px;
+        outline: none;
+        color: white;
+        border-radius: 24px;
+        transition: 0.25s;
+        cursor: pointer;
+    }
+
+        .form-box button[type="submit"]:hover {
+            background: none;
+            color: #AD0E0E;
+        }
+</style>
+

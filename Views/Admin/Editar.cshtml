@@ -1,0 +1,58 @@
+﻿@model CapaPresentacion.Models.Socios
+@{
+    ViewBag.Title = "Editar";
+}
+
+<br />
+<div class="alert alert-@ViewBag.alerta"> - - <b>@ViewBag.res</b> - - </div>
+<form action="/Admin/Editar" method="post">
+    <input type="hidden" id="id" name="id" value="@Model.IdSocio" />
+
+    <table>
+        <tr>
+            <td style="padding: 10px"> Nombre: </td>
+            <td style="padding: 10px"><input value="@Model.NombreSocio" class="form-control" type="text" name="nom" id="nom" required /></td>
+
+        </tr>
+        <tr>
+            <td style="padding: 10px"> Cedula con guiones: </td>
+            <td style="padding: 10px"><input value="@Model.CedulaSocio" class="form-control" type="text" name="ced" id="ced" required /></td>
+
+        </tr>
+
+        <tr>
+            <td style="padding: 10px"> Direccion: </td>
+            <td style="padding: 10px"><input value="@Model.Direccion" class="form-control" type="text" name="dir" id="dir" required /></td>
+
+        </tr>
+        <tr>
+            <td style="padding: 10px"> Telefono: </td>
+            <td style="padding: 10px"><input value="@Model.Telefono" class="form-control" type="text" name="tel" id="tel" required /></td>
+
+        </tr>
+        <tr>
+            <td style="padding: 10px"> Tipo de Membresia: </td>
+            <td style="padding: 10px"><input value="@Model.TipoMembresia" class="form-control" type="text" name="tipo" id="tipo" required /></td>
+
+        </tr>
+        <tr>
+            <td style="padding: 10px"> Contacto de  Emergencia: </td>
+            <td style="padding: 10px"><input value="@Model.NombreContacto" class="form-control" type="text" name="contactoname" id="contactoname" required /></td>
+
+        </tr>
+        <tr>
+            <td style="padding: 10px"> Telefono Contacto de Emergencia: </td>
+            <td style="padding: 10px"><input value="@Model.TelefonoContacto" class="form-control" type="text" name="telcontacto" id="telcontacto" required /></td>
+
+        </tr>
+
+        <tr>
+            <td style="padding: 10px"></td>
+            <td style="padding: 10px">
+                <button class="btn btn-success" type="submit" name="btn1" id="btn1"><span class="glyphicon glyphicon-pencil">Actualizar</span></button>
+                <a class="btn btn-danger" href="~/Admin/Index"><span class="glyphicon glyphicon-backward">Atras</span></a>
+
+            </td>
+        </tr>
+    </table>
+</form>
